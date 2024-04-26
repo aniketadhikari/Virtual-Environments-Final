@@ -510,7 +510,26 @@ HCI is not simply about understanding our current interaction with computers. It
 	3. stimulating certain parts of the brain
 # Perception
 ## Cybersickness symptoms and theories
+- AKA simulator sickness, or VR sickness
+- Dizziness, nausea, disorientation, other bodily discomfort
+- Symptoms similar to motion sickness
+	- but not the same because cybersickness can occur without any motion
+- Theories
+	- sensory conflict, visual-vestibular mismatch
+	- postural instability
+	- poison theory
 ## Cybersickness mitigation
+- Avoiding virtual accelerations (linear or rotational)
+- reduce exposure time 
+- Make purely virtual movements very fast and short duration (unnoticeable)
+- Minimize latency
+- Increase frame rate (60 fps)
+- Keep users in control of movement 
+### Novel Ideas
+- include some physical motion rather than just motion in the virtual world
+- reduce FOV during movement
+- provide balance aids 
+- provide a fixed visual reference frame 
 ## Distance misperception theories
 ## Distance misperception mitigation
 ## Depth perception issues in AR due to occlusion
