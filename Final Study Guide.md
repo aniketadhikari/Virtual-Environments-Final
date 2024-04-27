@@ -531,16 +531,73 @@ HCI is not simply about understanding our current interaction with computers. It
 - provide balance aids 
 - provide a fixed visual reference frame 
 ## Distance misperception theories
+- Distance is typically underestimated in HWDs 
+	- Ex. reach out and fail to grab an object because it's farther than it actually is 
+- Theories as to why distance misperception happens
+	- FOV
+		- If the FOV is narrow, users may not see peripheral objects or environmental cues that help judge distances accurately, leading to misinterpretations of depth.
+	- presence
+	- lack of visual detail
+		- Lower-resolution displays or poor image quality can make it difficult for users to accurately judge distances between objects, leading to misinterpretations.
+	- lack of virtual body
+		- no hands in the virtual world
+	- HWD ergonomics
+	- accommodation-vergence conflict
+		- stereoscopic displays may fail to show a single image and instead lead to double-vision
 ## Distance misperception mitigation
+- practice, feedback
+- interaction with the environment
+- widening the FOV 
+- adding an avatar of the user, self-avatar
+- adding scale figures, objects familiar to the user 
+- using a replica environment or transitional (pass-through?) environment
+- peripheral light stimulation
 ## Depth perception issues in AR due to occlusion
+- result of missing geometric model of the real-world environment 
+- virtual content appears on top (or in front of) real content even when the real content is closer 
 ## Mitigation of depth perception in AR
+- Simultaneous localization and mapping (SLAM) 
+	- Creating a detailed 3D map of the environment using SLAM techniques enables AR systems to better understand the spatial layout of the surroundings
+	- Info can be used to occlude virtual objects behind real-world objects more accurately.
+- Implementing robust surface detection and tracking algorithms
+	- helps AR systems recognize the geometry of real-world surfaces 
+	- accurately detect surfaces like floors, walls, and tables
 ## Perceptual illusions
+???
 ## Visual dominance
+- Vision dominates our senses
+	- contains the most information
+	- largest % of the brain
+	- when sensations conflict, vision wins out 
+- especially true in VR as most of our other senses (olfactory, auditory, etc.) are limited or "silent"
+- might contribute to problems with perception, but can also be used for beneficial purposes 
 ## Redirected walking
+- problem: Area to use VR is very limited, especially for actions like walking or running
+- possible solution: exploit visual dominance to give users the illusion that they are walking in a larger space when they're still in the same physical space. 
+### Possible Approaches
+- overt redirection near the boundary
+- subtle redirection near the boundary
+-  continuous redirection towards the center
+- continuous redirection towards an orbit
 ## Haptic retargeting
+- problem: difficult to achieve general-purpose haptics
+- solution: exploit visual dominance to user a generic haptic prop to represent various virtual surfaces 
+- solution 2: use a single haptic prop to represent multiple virtual objects by redirecting the user's reach
+	- MY PAPER
 ## Pseudo haptics
+- problem: some types of haptics can't be achieved with simple physical props due to things like force and weight
+- possible solution: use visual dominance to stimulate haptics with visual movement 
 ## Place illusion
+> **place illusion**: having a sensation of being in a real place
+> **presence**: place illusion (PI) + plausibility illusion (Psi) 
 ## Body ownership illusion
+- if...
+	- a VR system produces a strong place illusion
+	- and we see virtual body in the virtual environment
+	- and if the virtual body responds to our movements in the way we expect it to
+- then...
+	- user takes ownership of the virtual body and treat it as their own
+- Ex. body transfer illusion
 # Tracking & Input
 ## Input device vs. interaction technique
 ## Keyboards in VR
