@@ -600,7 +600,19 @@ HCI is not simply about understanding our current interaction with computers. It
 - Ex. body transfer illusion
 # Tracking & Input
 ## Input device vs. interaction technique
+- Input devices are just the physical tools that are used to implement various interaction techniques
+- Many different interaction techniques can be mapped onto any given input device.
 ## Keyboards in VR
+- traditional, keyboards are not conductive to immersive VR and mobile AR but it's still used
+	- keyboards are bad because size of a traditional keyboard and the need for a supporting surface
+	-  In the case of fully immersive 3D environments, when users are wearing an HWD, the real world is completely blocked out of the user’s view, making a traditional keyboard challenging to operate
+![[Pasted image 20240427160100.png]]
+- classic example of a traditional active sensing desktop input device that contains a set of discrete components (buttons)
+- commonly used in many desktop 3D applications from modeling to computer games.
+### solutions
+- miniaturize keyboard
+- reduce the number of keys
+- virtual keyboards
 ## Tablets/smartphones in VR/AR
 ## Isometric desktop 6-DOF input
 ## Tracking technologies and their pros/cons (mechanical, magnetic, inertial, optical, radar)
