@@ -606,48 +606,289 @@ HCI is not simply about understanding our current interaction with computers. It
 - traditional, keyboards are not conductive to immersive VR and mobile AR but it's still used
 	- keyboards are bad because size of a traditional keyboard and the need for a supporting surface
 	-  In the case of fully immersive 3D environments, when users are wearing an HWD, the real world is completely blocked out of the user’s view, making a traditional keyboard challenging to operate
-![[Pasted image 20240427160100.png]]
+![[keyboards-in-vr.png]]
 - classic example of a traditional active sensing desktop input device that contains a set of discrete components (buttons)
 - commonly used in many desktop 3D applications from modeling to computer games.
 ### solutions
 - miniaturize keyboard
 - reduce the number of keys
+	- chord keyboard
 - virtual keyboards
 ## Tablets/smartphones in VR/AR
+- smaller device can be used in immersive VR, mobile, and AR settings
+- pen and paper style interface
+	- pen and tablet metaphor
+- benefits
+	- ubiquitous
+	- on-board computing
+	- networking capabilities
+	- built-in display
+- negatives
+	- weight makes it unimmersive
+![[tablet.png]]
 ## Isometric desktop 6-DOF input
-## Tracking technologies and their pros/cons (mechanical, magnetic, inertial, optical, radar)
+- derivative of joystick
+- uses isometric forces to collect 3D position and orientation data
+	- push + pull for translation
+	- twist + tilt for orientation
+- moves objects dynamically in the three corresponding axes of x, y, z
+- designed specifically for 3D desktop
+	- commonly used in 3D applications for manipulating virtual objects.
+- do not replace the mouse; rather, they are used in conjunction with it
+	- One hand on the motion controller positions the objects in 3D space
+	- other hand with the mouse can simultaneously select menu items and edit the object.
+![[6-dof-movements.png]]
+![[6-dof-input-device.png]]
+## Tracking technologies and their pros/cons (mechanical, magnetic, inertial, optical, radar) #final 
+### Mechanical Sensing 
+- rigid structure 
+- very accurate ✅
+- low latency ✅
+- bulky with limited range ❌ 
+- often a component of haptic devices
+- One end is fixed in place, while the other is attached to the object to be tracked (usually the user’s head or hand)
+![[mechanical-sensing.png]]
+### Magnetic Sensing
+- uses a transmitting device that emits a low-frequency magnetic field 
+- A small sensor (the receiver) determines its position and orientation relative to this magnetic source
+- size of magnetic source determines tracking range
+	- The smaller the magnetic source transmitter, the smaller the acceptable range of the tracking system. 
+- Good accuracy that degrades as receiver moves away from the source ✅
+- Limited range ❌
+	- Doesn't work for outdoor or mobile AR
+- Some metal objects distort the magnetic field ❌
+![[Pasted image 20240501164142.png]]
+### Inertial Sensing
+- use a variety of inertial measurement devices, such as 
+	- angular-rate gyroscopes
+	- linear accelerometers
+	- and magnetometers
+- Typically, these sensors are combined into a single package called an inertial measurement unit (IMU).
+- each device provides derivative measurements of position and orientation, so when combined the results are relative measurements
+- tracking system is self-contained so the range is unlimited ✅
+- produce data at high sampling rates ✅
+- suffers from error accumulation from bias, noise, and drift ❌
+- most inertial sensors are used only to track orientation ❌
+![[interial-tracking.png]]
+### Optical Sensing 
+- use measurements of reflected or emitted light
+- computer vision  + optical sensors
+- many different types of cameras can be used
+	- simple desktop webcams
+	- stereo and depth cameras
+	- high-res cameras with high sampling rates and pixel densities 
+- have become more powerful and more common for 3D interaction
+- inside-out or outside-in
+	- direction from which tracking information is gathered relative to the AR system.
+- marker-based or marker-less
+	- approaches used in augmented reality (AR) systems to track the position and orientation of objects or users in the physical environment
+- occlusion ❌
+- complex ❌
+- accuracy ❌
+- untethered ✅
+- depth cameras extract 3D representations of a user or environment
+	- time of flight
+	- structured light
+	- stereo camera pair
+### Radar Sensing
+- uses modulated electromagnetic waves sent toward moving or static targets that scatters transmitted radiation, with some portion of the energy redirected back toward the radar where it is intercepted by a receiving antenna
+- designed to detect large objects such as ships and aircraft where precise sensing is not required
+	- impractical for sensing in 3D UIs
+- not good at tracking small objects ❌
+- tracks gestures with high accuracy ✅
+-  subtle hand movements can be detected ✅
+	- can lead to a wide variety of different interface controls for all facets of 3D selection and manipulation, navigation, and system control. 
+- does not track hand/finger position or orientation ❌
 ## Inside-out vs. outside-in optical tracking
-## Marker-based vs. markerless optical tracking
+- direction from which tracking information is gathered relative to the AR system.
+- inside-out refers to tracking from internal sensors 
+- outside-out refers to tracking from external sensors 
+## Marker-based vs. marker-less optical tracking
+- marker based refers to the use of specific visual markers or fiducial markers placed within the environment 
+- marker-less based refers to the capturing of the external environment without any markers 
+## Different tracking #final 
+### Marker-based inside-out systems
+- use of internal sensors to track the environment from the perspective of the user
+- requires the presence of specific visual markers or fiducial markers placed within the environment.
+- device uses markers as reference points to track its own position and orientation relative to them.
+- common in industrial applications or indoor navigation systems.
+### Marker-less outside-in systems
+- use external sensors, such as cameras or depth sensors, placed outside the user's device to track the environment.
+- no need for markers 
+- often used in experiences that require interaction with dynamic or unfamiliar environments, such as outdoor navigation or interactive gaming.
+### Marker-based outside-in systems
+- use of external sensors and markers around the environment
+- commonly used where the environment may be dynamic or cluttered, but specific markers can still be placed strategically for tracking purposes, such as in indoor navigation systems or interactive exhibits.
+### Marker-less inside-out systems
+- rely solely on internal sensors to track the environment from the user's perspective.
+- analyze the data from onboard sensors
+- offer greater flexibility and portability
+- commonly used in consumer-grade AR devices like smartphones, tablets, and mixed reality headsets, enabling applications such as mobile AR gaming, indoor navigation, and virtual try-on experiences.
 ## Hand tracking for XR (gloves, bare hand tracking)
+- cornerstone of VR/AR
+- Hand tracking as a whole ensures the hands are the primary mechanism for performing different 3D interaction tasks.
+- can be done with both active and passive sensing
+### Active
+- active sensors involve placing trackers on areas that need tracking (ex. data gloves)
+- large number of DOFs ✅
+- needs calibration at times by users ❌
+- user has to wear the device ❌
+### Passive
+- depth cameras extract finger position and millimeter wave radar can track moving fingers
+- provide unobtrusive finger tracking ✅
+- issues with line of sight ❌
+- doesn't offer measurement range of data gloves ❌
 ## Eye tracking devices
+- eye trackers are used to determine where user is looking 
+	- Device tracks the user’s pupils using corneal reflections detected by a camera
+- Used both as evaluation device and for interaction techniques 
+	- i.e., gaze directed navigation and object selection
 ## 3D mice
+- Handheld or user-worn input devices that combine position, orientation, and/or motion tracking with physical device components (buttons, sliders, etc.)
+- Users physically move 3D mice in 3D space instead of just moving the device along a flat surface
+![[3d-mice.png]]
 # Fidelity & Presence
 ## Fidelity vs. presence
-## Place illusion
-## Plausibility illusion
-## Embodiment
+### Fidelity
+> **fidelity**: how faithful a system is to the real world #definition 
+- AKA immersion
+### Presence
+> **presence**: illusion of reality, the supposed human psychological response to the level of fidelity. #definition 
+- the feeling of "being there"
+- subjective impression, something that an individual feels
+	- not controllable or directly measurable
+- Slater's 2 dimensions of presence 
+	1. place illusion (PI)
+	2. plausibility (Psi)
+- PI + Psi = Presence
+## Place illusion (PI) #final 
+> **place illusion**: illusion of being in a place in spite of the sure knowledge that you are not there #definition 
+- do you feel like you're there?
+## Plausibility illusion (Psi) #final 
+> **plausibility illusion**: illusion that what is apparently happening is really happening (even though you know for sure that it is not) #definition 
+- do you believe what you see?
+## Embodiment #final 
+- feeling of having a physical body within the virtual world
 ## Measures of presence (objective and subjective)
+- simple rating scale
+- questionnaires 
+	- system usability scale (SUS)
+	- prodromal questionnaire (PQ)
+	- International Trauma Questionnaire (ITQ)
+- psychological studies 
+	- A-B comparisons
+- psychological measures 
+	- "duck test"
+	- avatar social behaviors
+- measure effects presence is hypothesized to mediate
 ## Scenario fidelity
+> **scenario fidelity**: objective degree of exactness with which behaviors, rules, and object properties are reproduced in a simulation as compared to the real or intended experience #definition
+- Level of detail in the environment and characters
 ## Display fidelity
+> **display fidelity**: objective degree of exactness with which real-world sensory stimuli are reproduced by a display system #definition 
+- immersion
+- Resolution, FOV, refresh rate, sound quality, spatial audio
 ## Interaction fidelity
+> **interaction fidelity**: objective degree of exactness with which real-world actions are reproduced in a simulation as compared to the real or intended experience
+- naturalism
+- Ability to perform actions that align with real-world movements
 ## Relationship between fidelity and effectiveness
+- higher fidelity usually results in higher effectiveness 
+- very few cases where higher fidelity is detrimental
+- moderate fidelity can be bad
+	- unfamiliar or not-quite-good-enough interface
 ## Uncanny valley of interaction fidelity
+- applies to how users perceive the naturalness and effectiveness of interacting with virtual environments
+- human-like features can elicit feelings of eeriness or discomfort
+![[uncanny-valley-of-interaction-fidelity.png]]
+- initially as interaction fidelity increases, user satisfaction or performance also increases.
+- at a certain point, user satisfaction or performance can actually decrease because interactions might feel awkward, frustrating, or even creepy because they're not quite natural but not entirely artificial either.
+- however, if interaction fidelity reaches a very high level, becoming indistinguishable from real-world interaction, user satisfaction and performance jump back up.
 # Selection & Manipulation
 ## 3D interaction
+> human-computer interaction in which the user's tasks are carried out in a 3D spatial context #definition 
+- 3D input devices or 2D input devices with direct mappings to 3D 
 ## 3D user interface
+- UI involves 3D interaction
+![[3d-ui-examples.png]]
 ## 3D interaction technique
+- a method allowing a user to accomplish a task in a 3D UI
+	- hardware + software + metaphors/components
+- choosing the right input and output devices are not sufficient for an effective 3D UI
+	- also need software and metaphors/components
 ## Selection
+- acquiring or identifying an object or subset of objects 
 ## Manipulation
+- any act of physically handling objects with your hands
+- **positioning**: change object's 3D position
+- **rotation**: changing object's 3D orientation
+- **scaling**: uniformly changing the size of an object 
 ## Integrated vs. separated DOFs
+### Integrated DOFs
+- motion or behavior of one component is directly influenced by the motion of another component
+- level of coupling or interconnectedness between the components of the system.
+- Ex. VR Gaming with hand controllers where player's hands are integrated with the virtual environment. hand controllers' movements are tightly coupled with the actions and reactions within the VR environment.
+### Separated DOFs
+- components that operate more independently of each other.
+- Each degree of freedom can be analyzed or manipulated without significant influence from other degrees of freedom.
+- Ex. Mixed Reality (MR) with spatial mapping where user's movements and interactions are often separated from the environmental elements.
 ## Power grip vs. precision grip
-## Isomorphic vs. non-isomorphic interaction techniques
+### Power Grip
+ - all translation and rotation operations are carried out by larger muscle groups of the user’s shoulder, elbow, and wrist
+![[power-grip.png]]
+### Precision Grip
+- user can use smaller and faster muscle groups in the fingers
+-  usually results in better user performance, particularly in 3D rotation tasks #final 
+- reduces clutching, which happens when an object is released and then re-grasped in order to complete the task #final 
+	- infinite amount of spatial rotation without the need for clutching.
+![[precision-grip.png]]
+## Isomorphic vs. non-isomorphic interaction techniques #final 
+### Isomorphic 
+- realistic
+-  one-to-one correspondence between hand motions in the physical and virtual world
+- supposed to be the most natural
+- negatives:
+	- sometimes impractical because of constraints in input devices ❌
+	- often ineffective because of limitations of humans ❌
+	- stop imitating real life - make a better reality! ❌
+### Non-isomorphic
+- magic 
+- deviates significantly from strict realism
+- can allow users to manipulate objects quite differently than in the physical world, while maintaining usability and performance
 ## Simple virtual hand
+- direct mapping of the user’s hand motion to a virtual hand’s motion in a VE
+- isomorphic since it directly simulates our interaction with everyday objects
+- only objects within the area of the user's reach can be selected and manipulated ❌
+	- must employ a travel technique for far away objects
+![[simple-virtual-hand.png]]
 ## Arm extension (e.g., Go-Go)
+- allows user to interactively change the length of the virtual arm
+- improves upon simple virtual hand
+- when hand is close to avatar, go-go works like simple virtual hand
+- when user extends their hand beyond a predefined distance, the virtual hand grows
+- allows users to both bring faraway objects near and move near objects farther away.
+![[go-go.png]]
 ## Control-display ratio
+> relationship between the physical movement or manipulation required by the user (control) and the corresponding change or response in the displayed interface elements (display) #definition 
+- quantifies the relationship between the user's input and the system's output.
+-  think about controller sensitivity in Minecraft
+- high CD ratio $\rightarrow$ small movements lead to significant movement
+- low CD ratio $\rightarrow$ large movements are needed for significant movement
 ## Ray-casting
+- cast rays from the viewer's point of view or from a camera through each pixel on the screen and into the scene
+- shape of the ray can be a short line segment attached to the user’s hand
+- powerful selection technique ✅
+- At medium range with moderately sized or large objects, ray-casting simplest and most efficient selection technique ✅
+- bad for high precision of selection is required ❌
+- sometimes used for gaze
 ## Volume-based pointing
-## World in Miniature
+- require the definition of a vector and a volume to determine what user wants to select and manipulate
+- leverage the entire volume accessible to the user's hand or controller to define the selection.
+- flashlight, aperture, sphere-casting
 ## Progressive refinement
+- gradually reducing set of objects until one remains
+- used to optimize the rendering and manipulation of complex 3D scenes
+- Useful in cluttered, dynamic environments
 # Travel
 ## Travel vs. wayfinding
 ## Walking in place
